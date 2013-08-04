@@ -1,0 +1,59 @@
+#!/bin/bash -ue
+# Sync ROMS from external drive
+# Christian Bryn <chr.bryn@gmail.com> 2013
+# Modified to use lndir/symlinks instead of rsync by Mike Turley <mike@miketurely.com> 2013
+
+## config / defaults
+# XXX: fix for generation from retropie_setup.sh where the install path is known
+retro_user="USERTOBECHOSEN"
+retropie_path=/home/${retro_user}/RetroPie
+# not sure if we should default to true/false with create_romdirs, but defaulting to false feels less intrusive. I'd like it to be configurable. A config file is one option, having it statically generated with retropie_setup.sh upon install is another
+create_romdirs="true"
+
+## internals
+hook_name=${0##*/}
+
+## functions
+# nicked (and modified) this from the main usbmount script
+function log()
+{
+  logger -p user.$1 -t "usbmount-${hook_name}-[$$]" -- "$2"
+}
+
+## some sanity checking
+# this script should probably never 'fail'
+[[ -n "$UM_MOUNTPOINT" ]] || { log err "UM_MOUNTPOINT not set!"; exit 0; }
+[[ -d "$UM_MOUNTPOINT" ]] || { log err "UM_MOUNTPOINT is not a directory"; exit 0; }
+
+## main
+# mirror romdir structure to external drive
+# XXX: skip checking whether <romdir> already exists and let mkdir create missing dirs (if so don't exit here)
+if [ "${create_romdirs}" == "true" -a ! -d "${UM_MOUNTPOINT}/roms" ]
+then
+  log info "Attempting to create directory structure for ROMS in ${UM_MOUNTPOINT} ..."
+  # fetch list of romdirs from current installation and mirror onto external driv
+  find "${retropie_path}/roms" -mindepth 1 -maxdepth 1 -type d -printf "${UM_MOUNTPOINT}/roms/%f\n" | xargs mkdir -p 2>/dev/null || true
+  exit 0
+fi
+
+## sync
+# make sure we have something to sync from
+[ -d "${UM_MOUNTPOINT}/roms" ] || exit 0
+
+# the original version of this script by Christian Bryn had the following rsync call for copying roms:
+# rsync -azu ${UM_MOUNTPOINT}/roms ${retropie_path}/ >/dev/null 2>&1 || log err "rsync failed to sync ROMS, returned error code $?"
+# but I'm going to do something a little different... I want to symlink across filesystems so we can leave the roms on the USB.
+# NOTE this requires the `lndir` and `symlinks` commands to be in the path, which you can install with:
+# sudo apt-get install xutils-dev symlinks
+
+# start a logfile
+echo "Cleaning up existing links..." > ${retropie_path}/romlinks.log
+# first we delete any dangling symlinks from the romdir.
+symlinks -drv ${retropie_path}/roms/ >> ${retropie_path}/romlinks.log
+# then we create a ghost of the usb romdir in the retropie path.
+lndir ${UM_MOUNTPOINT}/roms/ ${retropie_path}/roms/
+# finally we clean up the pesky dotfiles that end up in there from archive tools.
+find ${retropie_path}/roms/ -name ._* -exec rm {} \;
+
+chown -R ${retro_user} ${retropie_path}/
+chgrp -R ${retro_user} ${retropie_path}/
