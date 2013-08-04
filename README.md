@@ -1,4 +1,4 @@
 RPNES-configs
 =============
 
-Configuration files for the specifically configured RetroPie software and hardware in the RPNES console project.
+Configuration files for RetroPie software, for the hardware in the RPNES-1 console.
