@@ -33,7 +33,7 @@ Installation
 
 6. Note that the default configuration is for 1 to 4 of [these specific SNES-style 3rd party controllers from RetroLink](http://www.lukiegames.com/New-SNES-Retro-PC-USB-Controller_p_11155.html).  To use the system with different controllers, you'll need to replace the file at `RetroPie/configs/all/retroarch.cfg`.  There is an alternate file in that directory suffixed -xbox which works with Xbox 360 controllers (wireless), although there's a lag issue there.  To generate your own controller mapping for this file, use the `retroarch-joyconfig` command-line tool, [documented here](https://github.com/petrockblog/RetroPie-Setup/wiki/Is-there-another-way-to-set-up-the-gamepad-for-use,-e.g.,-withing-the-snes-emulator%3F).
 
-7. Enjoy!  Use [the issue tracker here on github](https://github.com/mturley/RPNES-configs/issues) for suggestions and bugs, and feel free to contact me by email or on reddit.
+7. Enjoy!  Use [the issue tracker here on github](https://github.com/mturley/RPNES-configs/issues) for suggestions and bugs, and feel free to contact me [by email](mailto:mike@miketurley.com) or [on reddit](http://www.reddit.com/u/yooman).
 
 
 Want me to do all this for you?
