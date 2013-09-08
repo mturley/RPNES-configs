@@ -25,14 +25,16 @@ IMPORTANT: Do not connect any USB devices containing game ROMs to the Raspberry 
 Installation
 ------------
 
-Copy the contents of the repo to the root of the SD card you've already installed RetroPie on.
+# Copy the contents of the repo to the root of the SD card you've already installed RetroPie on.
 
     cp -rv ~/RPNES-configs/* /media/RPI-SD-CARD/
 
-Make sure you have expanded your filesystem with `sudo raspi-config` before proceeding.
+# **YOU ARE NOT DONE**, do not connect game storage yet.  Make sure you have expanded your filesystem with `sudo raspi-config` before proceeding.
 
-Reinstall the replacement USB ROM copy script by running `sudo ~/RetroPie-Setup/retropie-setup.sh` and selecting 3. Setup, then scrolling down and choosing to install the USB ROM copy service.  DO NOT use the main options, which will reinstall the whole operating system.  Reboot after this step.
+# Reinstall the replacement USB ROM copy script by running `sudo ~/RetroPie-Setup/retropie-setup.sh` and selecting `3. Setup`, then scrolling down and choosing to install the USB ROM copy service.  DO NOT use the main options, which will reinstall the whole operating system.  Reboot after this step.
 
-After rebooting, you can connect a USB storage drive and the link service will create a directory called roms/ on your drive for you, which will contain empty directories for each platform.  These directories are where you should put your game ROM files, extracted from any archives they came in.
+# After rebooting, you can connect a USB storage drive and the link service will create a directory called roms/ on your drive for you, which will contain empty directories for each platform.  These directories are where you should put your game ROM files, extracted from any archives they came in.
 
-Plug your game USB storage back into the Pi, and restart emulationstation or reboot.  Your system is now playable, enjoy!
+# Plug your game USB storage back into the Pi, and restart emulationstation or reboot.  Your system is now playable, enjoy!
+
+# Note that the default configuration is for 1 to 4 of [these specific SNES-style 3rd party controllers from RetroLink](http://www.lukiegames.com/New-SNES-Retro-PC-USB-Controller_p_11155.html).  To use the system with different controllers, you'll need to replace this file: RetroPie/configs/all/retroarch.cfg.  There is an alternate file in that directory suffixed -xbox which works with Xbox 360 controllers (wireless), although there's a lag issue there.
