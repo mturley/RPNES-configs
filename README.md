@@ -23,12 +23,13 @@ Installation
 
 2. Install dependencies from apt (the default sudo password is "raspberry"):
 
-    sudo apt-get install git xutils-dev symlinks
+    `sudo apt-get install git xutils-dev symlinks`
     
 3. Clone this repository somewhere and then copy its contents into the home directory:
 
-    git clone https://github.com/mturley/RPNES-configs.git
-    cp -rv ~/RPNES-configs/* ~/`
+    `git clone https://github.com/mturley/RPNES-configs.git`
+   
+    `cp -rv ~/RPNES-configs/* ~/`
 
 4. **YOU ARE NOT DONE**, do not connect game storage yet.  Make sure you have expanded your filesystem with `sudo raspi-config` before proceeding.
 
