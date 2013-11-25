@@ -9,7 +9,7 @@ The root of this repo is a mirror of the root of the SD card, so you can just co
 
 This repo is maintained by Mike Turley (mturley on github, /u/yooman on reddit).  Direct all inquiry to mike@miketurley.com, or post an issue on this repo if you have a problem.
 
-## This revision of the repository is compatible with RetroPie version 1.9.1.
+#### This revision of the repository is compatible with RetroPie version 1.9.1.
 
 
 A note about the USB ROM copy service
@@ -37,7 +37,10 @@ Installation
 
 4. **YOU ARE NOT DONE**, do not connect game storage yet.  Make sure you have expanded your filesystem with `sudo raspi-config` before proceeding.
 
-5. 
+5. If you're using a Mausberry Circuits shutdown switch on the Raspberry Pi, as I am in my builds, set it up to properly shut down the machine:
+
+    `wget http://www.mausberrycircuits.com/setup.sh`
+    `sudo bash setup.sh`
 
 6. Reinstall the replacement USB ROM copy script by running `sudo ~/RetroPie-Setup/retropie-setup.sh` and selecting `3. Setup`, then scrolling down and choosing to install the USB ROM copy service.  DO NOT use the main options, which will reinstall the whole operating system.  Reboot after this step.
 
