@@ -47,7 +47,7 @@ Installation
 
 9. If you're using a [Mausberry Circuits shutdown switch](http://mausberrycircuits.com/) on the Raspberry Pi, as I am in my builds, set it up to properly shut down the machine:
 
-    `wget http://www.mausberrycircuits.com/setup.sh`
+    `wget http://files.mausberrycircuits.com/setup.sh`
     `sudo bash setup.sh`
 
 10. Plug your game USB storage back into the Pi, and restart emulationstation or reboot.  Your system is now playable!
