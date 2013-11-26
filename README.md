@@ -46,7 +46,9 @@ Installation
 8. If you're using a [Mausberry Circuits shutdown switch](http://mausberrycircuits.com/) on the Raspberry Pi, as I am in my builds, set it up to properly shut down the machine:
 
     `wget http://files.mausberrycircuits.com/setup.sh`
+    
     `sudo bash setup.sh`
+    
     `sudo reboot`
 
 9. The last command above reboots the system. You must reboot at this step, as this activates the changes to the USB ROM link service.  After rebooting, you can connect a USB storage drive and the link service will create a directory called roms/ on your drive for you, which will contain empty directories for each platform.  These directories are where you should put your game ROM files, extracted from any archives they came in.
