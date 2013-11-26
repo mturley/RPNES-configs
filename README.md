@@ -31,13 +31,15 @@ Installation
 
     `sudo apt-get install git xutils-dev symlinks`
     
-5. Clone this repository somewhere and then copy its contents into the home directory:
+5. Clone this repository somewhere and then run its `copy.sh` script to copy the config files into all the right places.
 
     `git clone https://github.com/mturley/RPNES-configs.git`
    
-    `cp -rv ~/RPNES-configs/* ~/`
+    `cd RPNES-configs`
+
+    `bash copy.sh`
     
-    Note: this `cp -rv` step will eventually be replaced by integration with the RetroPie-Setup tool or a custom post-install script.
+    Note: this `copy.sh` step will soon be replaced with something less crude.
 
 6. **YOU ARE NOT DONE**, do not connect game storage yet.  Make sure you have expanded your filesystem with `sudo raspi-config` before proceeding.
 

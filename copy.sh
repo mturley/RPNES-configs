@@ -1,3 +1,3 @@
-cp -rv ./* /home/pi/
-rm /home/pi/copy.sh
-rm /home/pi/README.md
+cp -rv ./RetroPie/* /home/pi/RetroPie/
+cp -rv ./RetroPie-Setup/* /home/pi/RetroPie-Setup/
+cp -rv ./.emulationstation/* /home/pi/.emulationstation/
