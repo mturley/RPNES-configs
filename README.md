@@ -43,14 +43,15 @@ Installation
 
 7. Reinstall the replacement USB ROM copy script by running `sudo ~/RetroPie-Setup/retropie-setup.sh` and selecting `3. Setup`, then scrolling down and choosing to install the USB ROM copy service.  DO NOT use the main options, which will reinstall the whole operating system.
 
-8. Reboot the system (IMPORTANT). This activates the changes to the USB ROM link service.  After rebooting, you can connect a USB storage drive and the link service will create a directory called roms/ on your drive for you, which will contain empty directories for each platform.  These directories are where you should put your game ROM files, extracted from any archives they came in.
-
-9. If you're using a [Mausberry Circuits shutdown switch](http://mausberrycircuits.com/) on the Raspberry Pi, as I am in my builds, set it up to properly shut down the machine:
+8. If you're using a [Mausberry Circuits shutdown switch](http://mausberrycircuits.com/) on the Raspberry Pi, as I am in my builds, set it up to properly shut down the machine:
 
     `wget http://files.mausberrycircuits.com/setup.sh`
     `sudo bash setup.sh`
+    `sudo reboot`
 
-10. Plug your game USB storage back into the Pi, and restart emulationstation or reboot.  Your system is now playable!
+9. The last command above reboots the system. You must reboot at this step, as this activates the changes to the USB ROM link service.  After rebooting, you can connect a USB storage drive and the link service will create a directory called roms/ on your drive for you, which will contain empty directories for each platform.  These directories are where you should put your game ROM files, extracted from any archives they came in.
+
+10. After loading it up with games in the right directories, plug your game USB storage back into the Pi, wait 5-10 seconds for the link service to do it's thing, then restart emulationstation (press F4 then just use the command `emulationstation`.  Or just reboot again).  Your system is now playable!  Leave the USB game storage connected if possible, removing it will leave behind broken links (ghosts of games that crash when they launch) until the next time you connect a USB storage device.  I'm working on fixing that.
 
 11. Note that the default configuration is for 1 to 4 of [these specific SNES-style 3rd party controllers from RetroLink](http://www.lukiegames.com/New-SNES-Retro-PC-USB-Controller_p_11155.html).  To use the system with different controllers, you'll need to replace the file at `RetroPie/configs/all/retroarch.cfg`.  There is an alternate file [in that directory](https://github.com/mturley/RPNES-configs/tree/master/RetroPie/configs/all) suffixed -xbox which works with Xbox 360 controllers (wireless), although there's a lag issue there.  To generate your own controller mapping for this file, use the `retroarch-joyconfig` command-line tool, [documented here](https://github.com/petrockblog/RetroPie-Setup/wiki/Is-there-another-way-to-set-up-the-gamepad-for-use,-e.g.,-withing-the-snes-emulator%3F).
 
