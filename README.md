@@ -66,3 +66,11 @@ Want me to do all this for you?
 I do take custom orders for building and configuring machines with this setup, see my [Parts List and Pricing Rubric here](https://docs.google.com/document/d/1rLLHG-VLm9iHEIwyDLYxpoxHrP2LZxCx-SFpLb31xx0/edit).
 
 NOTE: build orders are currently suspended so I have time to study (I'm a senior in a CompSci BS program).  New orders will be back-orders (think months), and I'll take normal orders again some day soon.
+
+
+Want to buy me a beer and/or a coffee?
+--------------------------------------
+
+Much obliged!  Every penny helps chip at my student loans, or at least helps pay for the caffiene I convert into code.
+
+[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mike%40miketurley%2ecom&lc=US&item_name=MikeTurley%2ecom%20Services&item_number=RPNES%2dTIP&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
