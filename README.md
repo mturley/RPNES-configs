@@ -37,14 +37,14 @@ Installation
 
 4. **YOU ARE NOT DONE**, do not connect game storage yet.  Make sure you have expanded your filesystem with `sudo raspi-config` before proceeding.
 
-5. If you're using a Mausberry Circuits shutdown switch on the Raspberry Pi, as I am in my builds, set it up to properly shut down the machine:
+5. Reinstall the replacement USB ROM copy script by running `sudo ~/RetroPie-Setup/retropie-setup.sh` and selecting `3. Setup`, then scrolling down and choosing to install the USB ROM copy service.  DO NOT use the main options, which will reinstall the whole operating system.
+
+6. Reboot the system (IMPORTANT). This activates the changes to the USB ROM link service.  After rebooting, you can connect a USB storage drive and the link service will create a directory called roms/ on your drive for you, which will contain empty directories for each platform.  These directories are where you should put your game ROM files, extracted from any archives they came in.
+
+7. If you're using a [Mausberry Circuits shutdown switch](http://mausberrycircuits.com/) on the Raspberry Pi, as I am in my builds, set it up to properly shut down the machine:
 
     `wget http://www.mausberrycircuits.com/setup.sh`
     `sudo bash setup.sh`
-
-6. Reinstall the replacement USB ROM copy script by running `sudo ~/RetroPie-Setup/retropie-setup.sh` and selecting `3. Setup`, then scrolling down and choosing to install the USB ROM copy service.  DO NOT use the main options, which will reinstall the whole operating system.  Reboot after this step.
-
-7. After rebooting, you can connect a USB storage drive and the link service will create a directory called roms/ on your drive for you, which will contain empty directories for each platform.  These directories are where you should put your game ROM files, extracted from any archives they came in.
 
 8. Plug your game USB storage back into the Pi, and restart emulationstation or reboot.  Your system is now playable!
 
