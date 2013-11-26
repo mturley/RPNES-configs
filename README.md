@@ -21,7 +21,11 @@ IMPORTANT: Do not connect any USB devices containing game ROMs to the Raspberry 
 Installation
 ------------
 
-1. First, install RetroPie on your SD card from their SD card image.
+1. First, install RetroPie on your SD card.  The easiest way to do this is by [downloading the RetroPie SD card image from the project's download page](http://blog.petrockblock.com/retropie/retropie-downloads/), and then using a standard Raspbian-compatible technique to copy that image to an SD card.  See here for guides on this process.  Personally, I use a little tool called [PiFiller](http://ivanx.com/raspberrypi/) for Mac OSX.  People on Windows have had success with [Win32DiskImager](http://sourceforge.net/projects/win32diskimager/).
+
+2. Connect the Raspberry Pi to a USB keyboard and to the internet, and then boot it up.  It takes a good several minutes sometimes, wait for the RetroPie Project splash screen, and then a little later you'll get either an input configuration screen or an emulator menu.
+
+3. When the machine is fully booted, press F4 on the keyboard to exit and reach a bash terminal.
 
 2. Install dependencies from apt (the default sudo password is "raspberry"):
 
